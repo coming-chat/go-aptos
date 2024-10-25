@@ -88,7 +88,7 @@ func (tb *TransactionBuilderRemoteABI) BuildTransactionPayload(function string, 
 		argABIs = append(argABIs, abi)
 	}
 
-	typeArgABIs := make([]TypeArgumentABI, len(funcABI.GenericTypeParams))
+	typeArgABIs := make([]TypeArgumentABI, 0, len(funcABI.GenericTypeParams))
 	for idx := range funcABI.GenericTypeParams {
 		typeArgABIs = append(typeArgABIs, TypeArgumentABI{Name: strconv.FormatInt(int64(idx), 10)})
 	}
